@@ -95,3 +95,34 @@ JOIN (
 ) sub ON u.id = sub.user_id
 GROUP BY u.name;
 
+INSERT INTO users (id, name, age, gender, created_at)
+VALUES (6, '中村愛', 25, 'female', '2025-06-01');
+
+INSERT INTO products (id, product_name, price)
+VALUES (6, 'エアコン', 60000);
+
+INSERT INTO orders (id, user_id, order_date)
+VALUES (10, 10, '2025-06-10');
+
+INSERT INTO order_items (id, order_id, product_id, quantity)
+VALUES (10, 10, 6, 1);
+
+UPDATE users
+SET age = 24
+WHERE name = '田中美咲';
+
+UPDATE products
+SET price = ROUND(price * 1.10);
+
+UPDATE orders
+SET order_date = '2024-05-01'
+WHERE order_date < '2024-06-01';
+
+DELETE FROM users
+WHERE name = '高橋健一';
+
+DELETE FROM order_items
+WHERE order_id = 5;
+
+DELETE FROM products
+WHERE id NOT IN (SELECT product_id FROM order_items);
