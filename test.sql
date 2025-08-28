@@ -153,7 +153,7 @@ FROM users AS u
 LEFT JOIN orders AS o ON o.user_id = u.id
 GROUP BY u.id, u.name
 ORDER BY u.id;
-
+（
 
 INSERT INTO users (id, name, age, gender, created_at)
 VALUES (6, '中村愛', 25, 'female', '2025-06-01');
@@ -162,7 +162,7 @@ INSERT INTO products (id, product_name, price)
 VALUES (6, 'エアコン', 60000);
 
 INSERT INTO orders (id, user_id, order_date)
-VALUES (10, 10, '2025-06-10');
+VALUES (10, 1, '2025-06-10');
 
 INSERT INTO order_items (id, order_id, product_id, quantity)
 VALUES (10, 10, 6, 1);
